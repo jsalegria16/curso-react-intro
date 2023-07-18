@@ -1,3 +1,5 @@
 # https://www.robotstxt.org/robotstxt.html
+# Para cuestuiones de web scraping
 User-agent: *
 Disallow:
+
