@@ -1,4 +1,4 @@
-import './TodoTitle.css'
+import './TodoTitle/TodoTitle.css'
 
 function TodoTitle({totalTasks,completedTasks}) { // REact component
     return (
