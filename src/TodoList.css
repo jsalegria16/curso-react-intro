@@ -1,0 +1,71 @@
+/*
+Cómo ordenar los estilos
+
+Una manera de hacerlo es según su propósito. Siguiendo el siguiente orden:
+
+Posicionamiento
+Modelo de caja
+Tipografía
+Visuales
+Otros
+
+*/
+
+.TodoList{
+
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    margin: 5px;
+    padding: 2%;
+    font-size: 18px;
+    list-style: none;
+    height: 346px;
+    max-height: 346px;
+    overflow-y: auto;
+    
+
+}
+
+.TodoList li{
+
+    border-radius: 10px;
+    margin: 0px 0 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    padding: 0px
+
+}
+
+.TodoList li div{
+    width: 10%;
+    text-align: center;
+}
+
+.TodoList li div input{
+    cursor: pointer;
+}
+
+.TodoList li p{
+    width: 80%;
+    text-align: left;
+}
+
+.DeleteIconItem{
+    cursor: pointer;
+    padding-right: 18px;
+    width: 32px;
+}
+
+.DeleteIconItem:hover{
+
+    width: 33px;
+}
+
+.completedTask{
+    text-decoration:line-through;
+  text-decoration-color: red;
+  text-decoration-style: solid;
+}

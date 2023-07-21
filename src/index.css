@@ -13,7 +13,31 @@ code {
 }
 
 #root{
-  background-color: blueviolet;
+  /* background-color: blueviolet; */
   display: flex;
+  justify-content: space-evenly;
+  /* padding: 10px 10px 10px 10px; */
+  margin-top: 10px;
+  height: 100%;
+  width: 100%;
 }
 
+
+.MainRight{
+  background-color: rgb(131, 131, 224);
+  width: 76%;
+
+}
+
+.Mainleft{
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 10px;
+  justify-content: flex-start;
+  font-size: 18px;
+}
+
+.CategoricIcon{
+  height: 30px;
+}

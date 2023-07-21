@@ -1,0 +1,41 @@
+/*
+Cómo ordenar los estilos
+
+Una manera de hacerlo es según su propósito. Siguiendo el siguiente orden:
+
+Posicionamiento
+Modelo de caja
+Tipografía
+Visuales
+Otros
+
+*/
+
+.ContainerCategoryList{
+    height: 80%;
+}
+
+.TodoCategoryList{
+    padding: 0px;
+}
+
+
+.TodoCategoryList li{
+
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px 0px 10px;
+    /* background: #0000ff1f; */
+    font-weight: 700;
+    cursor: pointer;
+
+}
+
+.TodoCategoryList li:hover{
+
+    background: #0000ff1f;
+
+}
+

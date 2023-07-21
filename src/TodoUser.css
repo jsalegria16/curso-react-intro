@@ -1,0 +1,34 @@
+
+.UserImage{
+    height: 40px;
+    border-radius: 50%;
+}
+
+.UserContainer {
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.UserContainer ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px;
+    align-items: center;
+}
+
+.UserName{
+    margin: 0px 0px 0px 10px;
+    font-weight: bolder;
+    text-align: center;
+}
+
+
+.UserName_Email{
+    margin: 0px 0px 0px 10px;
+    font-size: 15px;
+    text-align: center;
+    
+}
+

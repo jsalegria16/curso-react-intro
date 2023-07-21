@@ -1,0 +1,33 @@
+/*
+        Cómo ordenar los estilos
+        
+        Una manera de hacerlo es según su propósito. Siguiendo el siguiente orden:
+
+        Posicionamiento
+        Modelo de caja
+        Tipografía
+        Visuales
+        Otros
+        
+        */
+
+.BarraNavegavion {
+
+  border-radius: 20px;
+  margin: 5px;
+  font-size: 24px;
+  font-weight: bolder;
+  color: blanchedalmond;
+  display: flex;
+  justify-content: space-between;
+}
+
+.NavBarLeft ul , .NavBarRight ul{
+  display: flex;
+  list-style: none; 
+
+}
+
+.NavBarLeft ul li , .NavBarRight ul li{
+  padding: 10px;
+}
