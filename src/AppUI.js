@@ -58,7 +58,7 @@ function AppUI({
                     key={category.text}
                     UrlIcon={category.UrlIcon} 
                     text={category.text}
-                    TotalTasks={TotalTodos}
+                    TotalTasks={category.Tasks.length}
                     /> 
                     ))} {/*Cada hijo debe tener una clave única, como? el tex :)  - También le paso la prop Texto*/}
                 </TodoCategoryList>

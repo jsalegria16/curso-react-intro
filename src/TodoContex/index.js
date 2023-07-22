@@ -25,9 +25,11 @@ function TodoProvider ({children}) { // Se usa mas este, uno Provider personaliz
     const [searchValue,setSearchValue] = React.useState('')
     // console.log('se esta buscanco: ',searchValue);
 
-    //Estado para le modal >> Teletransportación
-
+    //Estado para el modal >> Teletransportación
     const [openModal, setOpenmodal] = React.useState(1);
+
+    //Estado para la categoría actual
+    const [actualCategory, setActualCategory] = React.useState('Planned')
 
 
     //Cantidad de Todos Completados
@@ -61,11 +63,15 @@ function TodoProvider ({children}) { // Se usa mas este, uno Provider personaliz
         saveTodos(newTodos) // modifico el estado todos
     }
 
-    const addTodoFunc = (texto) =>{
+    // Agregar nuevos todos
+    const addTodoFunc = (texto) =>{ // Para
         const newTodos = [...Todos]; //Copio
         newTodos.unshift({text:texto,completed:false})
         saveTodos(newTodos) // modifico el estado todos
     }
+
+
+
 
 
     return(
@@ -82,7 +88,9 @@ function TodoProvider ({children}) { // Se usa mas este, uno Provider personaliz
             error,
             openModal,
             setOpenmodal,
-            addTodoFunc
+            addTodoFunc,
+            actualCategory, 
+            setActualCategory
         }}>
             {children}
         </TodoContext.Provider>
