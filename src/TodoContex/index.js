@@ -61,6 +61,12 @@ function TodoProvider ({children}) { // Se usa mas este, uno Provider personaliz
         saveTodos(newTodos) // modifico el estado todos
     }
 
+    const addTodoFunc = (texto) =>{
+        const newTodos = [...Todos]; //Copio
+        newTodos.unshift({text:texto,completed:false})
+        saveTodos(newTodos) // modifico el estado todos
+    }
+
 
     return(
         <TodoContext.Provider value={{ // {/*Aquí expongo todo, a esto pueden acceder todos */}
@@ -74,7 +80,9 @@ function TodoProvider ({children}) { // Se usa mas este, uno Provider personaliz
             deleteTodoFunc,
             loadind, 
             error,
-            openModal
+            openModal,
+            setOpenmodal,
+            addTodoFunc
         }}>
             {children}
         </TodoContext.Provider>

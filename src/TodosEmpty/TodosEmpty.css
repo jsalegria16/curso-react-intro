@@ -11,7 +11,7 @@
   .empty-message {
     font-size: 18px;
     font-weight: bold;
-    opacity: 0; /* Configuramos la opacidad inicial a 0 para la animación fadeIn */
+    opacity: fadeIn; /* Configuramos la opacidad inicial a 0 para la animación fadeIn */
   }
   
   /* Animación de fadeIn */

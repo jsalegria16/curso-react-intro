@@ -1,6 +1,6 @@
 // import { TodoTitle as MyTodoTitle} from './TodoTitle';
 import { TodoList } from './TodoList';
-import { TodoAddItem } from './TodoList/TodoAddItem';
+import { TodoAddItem } from './TodoAddItem';
 import { TodoItem } from './TodoList/TodoItem';
 
 import { TodoTitle } from './Title';
@@ -40,7 +40,7 @@ function AppUI({
     const {defaultCAtegories,TotalTodos} =React.useContext(TodoContext) // Esto no es prop Drilling
     const {searchedTodos, completeTodoFunc,
         deleteTodoFunc, loadind, error,
-        openModal} =React.useContext(TodoContext) // Esto no es prop Drilling
+        openModal,setOpenmodal} =React.useContext(TodoContext) // Esto no es prop Drilling
 
     return (
         <>
@@ -79,7 +79,8 @@ function AppUI({
                     {loadind && <TodosLoading/>}
                     {error && <TodosError/>}
                     {(!loadind && searchedTodos.length == 0) && <TodosEmpty/>}
-
+                    {console.log(!loadind)}
+                    {console.log(searchedTodos.length == 0 )}
                     {/* Podemos renderizar un array */}
                     {searchedTodos.map(todo => (
                         <TodoItem 
@@ -94,11 +95,13 @@ function AppUI({
                 </TodoList>
 
                 <TodoAddItem/>
-
-                {openModal && (<Modal>
-                    Holaa ??
-                    {/* Aquí quiero todo lo que se quiera teletransportar */}
-                </Modal>)}
+                {/*  */}
+                {
+                //openModal && (<Modal>
+                    
+                   // {/* Aquí quiero todo lo que se quiera teletransportar */}
+                //</Modal>)
+                }
             </section>
         </>
         
