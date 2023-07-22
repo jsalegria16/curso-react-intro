@@ -66,3 +66,31 @@ export {useLocalStorage};
 
 // localStorage.setItem('TODOS_V1',JSON.stringify(defaultTodos))
 //localStorage.deleteItem('TODOS_V1')
+
+// MyLocalStorage = {
+
+//   User1 : {
+//       userNane: 'J',
+//       Categories: [
+//           {
+//               UrlIcon: 'htt',
+//               text: 'Planned',
+//               Tasks:[
+//                   {text: 'Aprovar la FSDWJS', completed: true},
+//               ]
+//           },
+//           {
+//               UrlIcon: 'htt',
+//               text: 'Planned',
+//               Tasks:[
+//                   {text: 'Aprovar la FSDWJS', completed: true},
+//               ]
+//           }  
+//       ]     
+//   }
+
+// }
+
+
+// localStorage.setItem('pru',JSON.stringify(MyLocalStorage))
+
