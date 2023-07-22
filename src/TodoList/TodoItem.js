@@ -33,7 +33,7 @@ function TodoItem(props) {
       </div>
       <p className={completedClass}>{props.Texto}</p>
       <img className='DeleteIconItem' 
-        src='https://cdn-icons-png.flaticon.com/128/6755/6755363.pngs'
+        src='https://cdn-icons-png.flaticon.com/128/6755/6755363.png'
         onClick={props.onDetelep} 
         
       />

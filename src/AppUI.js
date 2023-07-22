@@ -13,7 +13,17 @@ import { TodoCategoryList } from './TodoCategoryList';
 import { TodoAddCategory } from './TodoCategoryList/TodoAddCategory';
 import { TodoCategory } from './TodoCategoryList/TodoCategory';
 
+import { TodosLoading } from './TodosLoading';
+import { TodosError } from './TodosError';
+import { TodosEmpty } from './TodosEmpty';
+import { TodoContext } from './TodoContex';
+import { Modal } from './Modal';
+import React from 'react';
+
+
+
 function AppUI({
+    /* // Esto era Props drillling 
     searchValue,
     setSearchValue,
     defaultCAtegories,
@@ -23,58 +33,72 @@ function AppUI({
     completeTodoFunc,
     deleteTodoFunc,
     loadind, 
-    error
-
+    error 
+    */
 }){
 
+    const {defaultCAtegories,TotalTodos} =React.useContext(TodoContext) // Esto no es prop Drilling
+    const {searchedTodos, completeTodoFunc,
+        deleteTodoFunc, loadind, error,
+        openModal} =React.useContext(TodoContext) // Esto no es prop Drilling
+
     return (
-        <> {/*React. */}
+        <>
             <section className='Mainleft'>
-            <TodoUser/>
-            <TodoSearch 
-                searchValue = {searchValue}
-                setSearchValue = {setSearchValue}
-            />
-            <TodoCategoryList>
-                {/* Podemos renderizar un array */}
-                {defaultCAtegories.map(category => (
-                <TodoCategory
-                key={category.text}
-                UrlIcon={category.UrlIcon} 
-                text={category.text}
-                TotalTasks={TotalTodos}
-                /> 
-                ))} {/*Cada hijo debe tener una clave única, como? el tex :)  - También le paso la prop Texto*/}
-            </TodoCategoryList>
-            <TodoAddCategory/>
+                <TodoUser/>
+                <TodoSearch 
+                    // searchValue = {searchValue}
+                    // setSearchValue = {setSearchValue}
+                />
+
+                <TodoCategoryList>
+                    {/* Podemos renderizar un array */}
+                    {defaultCAtegories.map(category => (
+                    <TodoCategory
+                    key={category.text}
+                    UrlIcon={category.UrlIcon} 
+                    text={category.text}
+                    TotalTasks={TotalTodos}
+                    /> 
+                    ))} {/*Cada hijo debe tener una clave única, como? el tex :)  - También le paso la prop Texto*/}
+                </TodoCategoryList>
+
+                <TodoAddCategory/>
+
             </section>
+
             <section className='MainRight'> {/*Con esto me evito encerrar todo en un div.*/}
-            <TodoTitle 
-                totalTasks = {TotalTodos}
-                completedTasks = {completedTodos}
-            /> {/* // Title and counter - Por cada comonente un archivo */} 
-            <TodoList>
 
-                {/*De acurdo a los estados ladong and error de useLocalStorage */}
-                {loadind && <p> We're loadong be patient plis </p>}
-                {error && <p> Panic  </p>}
-                {(!loadind && searchedTodos.length == 0) && <p>crea tu Todo </p>}
+                <TodoTitle 
+                    // totalTasks = {TotalTodos}
+                    // completedTasks = {completedTodos}
+                /> {/* // Title and counter - Por cada comonente un archivo */} 
 
-                {/* Podemos renderizar un array */}
-                {searchedTodos.map(todo => (
-                <TodoItem 
-                key={todo.text} 
-                Texto={todo.text}
-                Completed={todo.completed}
-                onComplete = {(isCompleted) =>completeTodoFunc(isCompleted,todo.text)} // Le paso la funcion que se encargará de completar el todo respectivo //  Too many re-renders. React limits the number of renders to prevent an infinite loop
-                onDetelep = {() =>deleteTodoFunc(todo.text)}
-                /> 
-                ))} {/*Cada hijo debe tener una clave única, como? el tex :)  - También le paso la prop Texto*/}
-                
+                <TodoList>
+                    {/*De acurdo a los estados ladong and error de useLocalStorage */}
+                    {loadind && <TodosLoading/>}
+                    {error && <TodosError/>}
+                    {(!loadind && searchedTodos.length == 0) && <TodosEmpty/>}
 
-                
-            </TodoList>
-            <TodoAddItem/>
+                    {/* Podemos renderizar un array */}
+                    {searchedTodos.map(todo => (
+                        <TodoItem 
+                        key={todo.text} 
+                        Texto={todo.text}
+                        Completed={todo.completed}
+                        onComplete = {(isCompleted) =>completeTodoFunc(isCompleted,todo.text)} // Le paso la funcion que se encargará de completar el todo respectivo //  Too many re-renders. React limits the number of renders to prevent an infinite loop
+                        onDetelep = {() =>deleteTodoFunc(todo.text)}
+                        /> 
+                        )
+                    )} {/*Cada hijo debe tener una clave única, como? el tex :)  - También le paso la prop Texto*/}
+                </TodoList>
+
+                <TodoAddItem/>
+
+                {openModal && (<Modal>
+                    Holaa ??
+                    {/* Aquí quiero todo lo que se quiera teletransportar */}
+                </Modal>)}
             </section>
         </>
         

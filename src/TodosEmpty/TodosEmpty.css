@@ -1,0 +1,25 @@
+/* Estilos del contenedor principal */
+.empty-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  /* Estilos del mensaje de agregar nueva tarea */
+  .empty-message {
+    font-size: 18px;
+    font-weight: bold;
+    opacity: 0; /* Configuramos la opacidad inicial a 0 para la animación fadeIn */
+  }
+  
+  /* Animación de fadeIn */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }

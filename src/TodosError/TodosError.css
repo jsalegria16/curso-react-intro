@@ -1,0 +1,16 @@
+/* Estilos del contenedor principal */
+.error-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  /* Estilos del mensaje de error */
+  .error-message {
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+  }

@@ -20,8 +20,7 @@ function useLocalStorage(itemNAme,initialValue) { // Vamos a abstraer cosas
     React.useEffect(()=>{
       setTimeout(()=>{try{
         const LocalStorageItems= localStorage.getItem(itemNAme) // Esting mode
-        console.log('hiiiii je jeje  j');
-        console.log(LocalStorageItems);
+        console.log('Getting local storage');
         
 
         if (!LocalStorageItems) { //Null, vacio, ...
@@ -51,3 +50,19 @@ function useLocalStorage(itemNAme,initialValue) { // Vamos a abstraer cosas
 }
 
 export {useLocalStorage}; 
+
+
+// const defaultTodos = [
+//   {text: 'Aprovar la FSDWJS', completed: true},
+//   {text: 'Terminar curso de ract', completed: true},
+//   {text: 'Despertar a las 5 y estudiar ingles', completed: false},
+//   {text: 'jugar dota 2', completed: true},
+//   {text: 'La tesis :)', completed: false},
+//   {text: 'Escribitle a dani', completed: false},
+//   {text: 'Traer leña', completed: false},
+//   {text: 'Ordeñar', completed: false},
+
+// ]
+
+// localStorage.setItem('TODOS_V1',JSON.stringify(defaultTodos))
+//localStorage.deleteItem('TODOS_V1')

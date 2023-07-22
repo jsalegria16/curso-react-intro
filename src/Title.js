@@ -1,6 +1,14 @@
+import React from 'react';
 import './TodoTitle/TodoTitle.css'
+import { TodoContext } from './TodoContex';
 
-function TodoTitle({totalTasks,completedTasks}) { // REact component
+function TodoTitle(
+  //{totalTasks,completedTasks} //Esto ya no, ahora usamos React.useContext(TodoContext)
+  ) { // REact component
+
+    const {TotalTodos:totalTasks,completedTodos:completedTasks} = React.useContext(TodoContext) //Elegimos las propiedades que queremos usar.
+
+
     return (
         <nav className="BarraNavegavion">
           {/* <img src="/icons/menu.png" alt="MenuIcon" class="MenuIcon"> */}

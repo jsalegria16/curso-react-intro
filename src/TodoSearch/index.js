@@ -1,6 +1,10 @@
 import React from 'react'
+import { TodoContext } from '../TodoContex';
 
-function TodoSearch({searchValue,setSearchValue}){
+function TodoSearch(
+    // {searchValue,setSearchValue} // Ahora uso const {searchValue,setSearchValue} = React.useContext(TodoContext)
+){
+    const {searchValue,setSearchValue} = React.useContext(TodoContext)
 
     return(
 
