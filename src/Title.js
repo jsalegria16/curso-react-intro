@@ -13,13 +13,14 @@ function TodoTitle(
         <nav className="BarraNavegavion">
           {/* <img src="/icons/menu.png" alt="MenuIcon" class="MenuIcon"> */}
           <div className="NavBarLeft">
+            <div>Rama Para funcionalidades completas y add categories</div>
             <ul>
               <li>
               <img src="https://cdn-icons-png.flaticon.com/128/6776/6776595.png" className="CategoricIcon" alt='Log'></img>
               {/* <img src="/icons/menu.png" alt="MenuIcon" class="MenuIcon">  */}
               </li>
               <li>
-                  Planned
+                  Planned 
               </li>
             </ul>
           </div>
