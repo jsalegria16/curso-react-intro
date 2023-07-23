@@ -22,16 +22,16 @@ function TodoProvider ({children}) { // Se usa mas este, uno Provider personaliz
               UrlIcon: "htt",
               text: "Planned",
               Tasks: [
-                { text: "Hello", completed: true }
+                // { text: "", completed: true }
                 ]
             },
-            {
-              UrlIcon: "htt",
-              text: "Planned2",
-              Tasks: [
-                    { text: "jejej", completed: true }
-                ]
-            }
+            // {
+            //   UrlIcon: "htt",
+            //   text: "Planned2",
+            //   Tasks: [
+            //         // { text: "jejej", completed: true }
+            //     ]
+            // }
           ]
         }
       });
@@ -114,9 +114,8 @@ function TodoProvider ({children}) { // Se usa mas este, uno Provider personaliz
         const newTodos = [...Todos]; //Copio
         let index = newTodos.findIndex((todo)=> todo.text===texto) // busco index
         newTodos[index].completed = isCompleted //Completo el deseado
-        updateData(newTodos)
-
-        saveItems(item) // modifico el estado todos
+        const newItem = updateData(newTodos)
+        saveItems(newItem) // modifico el estado todos
     }
 
     //Eliminar Todos.
@@ -124,8 +123,8 @@ function TodoProvider ({children}) { // Se usa mas este, uno Provider personaliz
         const newTodos = [...Todos]; //Copio
         let index = newTodos.findIndex((todo)=> todo.text===texto) // busco index
         newTodos.splice(index,1);//(Pisicion inicial, numero de elementos de ahí en adelante)
-        updateData(newTodos)
-        saveItems(item) // modifico el estado todos
+        const newItem = updateData(newTodos)
+        saveItems(newItem) // modifico el estado todos
     }
 
     // Agregar nuevos todos

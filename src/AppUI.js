@@ -1,7 +1,7 @@
 // import { TodoTitle as MyTodoTitle} from './TodoTitle';
 import { TodoList } from './TodoList';
 import { TodoAddItem } from './TodoAddItem';
-import { TodoItem } from './TodoList/TodoItem';
+import { TodoItem } from './TodoItem';
 
 import { TodoTitle } from './Title';
 
