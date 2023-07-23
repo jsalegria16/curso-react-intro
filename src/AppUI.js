@@ -16,8 +16,7 @@ import { TodoCategory } from './TodoCategoryList/TodoCategory';
 import { TodosLoading } from './TodosLoading';
 import { TodosError } from './TodosError';
 import { TodosEmpty } from './TodosEmpty';
-import { TodoContext } from './TodoContex';
-import { Modal } from './Modal';
+import { TodoContext } from './TodoContext';
 import React from 'react';
 
 
@@ -37,10 +36,10 @@ function AppUI({
     */
 }){
 
-    const {defaultCAtegories,TotalTodos} =React.useContext(TodoContext) // Esto no es prop Drilling
+    const {defaultCAtegories} =React.useContext(TodoContext) // Esto no es prop Drilling
     const {searchedTodos, completeTodoFunc,
         deleteTodoFunc, loadind, error,
-        openModal,setOpenmodal} =React.useContext(TodoContext) // Esto no es prop Drilling
+        } =React.useContext(TodoContext) // Esto no es prop Drilling
 
     return (
         <>
@@ -58,7 +57,7 @@ function AppUI({
                     key={category.text}
                     UrlIcon={category.UrlIcon} 
                     text={category.text}
-                    TotalTasks={category.Tasks.length}
+                    TotalTasks={category.TotalTasks}
                     /> 
                     ))} {/*Cada hijo debe tener una clave única, como? el tex :)  - También le paso la prop Texto*/}
                 </TodoCategoryList>
@@ -79,8 +78,6 @@ function AppUI({
                     {loadind && <TodosLoading/>}
                     {error && <TodosError/>}
                     {(!loadind && searchedTodos.length == 0) && <TodosEmpty/>}
-                    {console.log(!loadind)}
-                    {console.log(searchedTodos.length == 0 )}
                     {/* Podemos renderizar un array */}
                     {searchedTodos.map(todo => (
                         <TodoItem 

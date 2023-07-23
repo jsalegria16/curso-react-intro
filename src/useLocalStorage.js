@@ -2,6 +2,7 @@ import React from 'react';
 
 function useLocalStorage(itemNAme,initialValue) { // Vamos a abstraer cosas
 
+  console.log('Holaaa');
     //Estado inicial de React
     // Mas adelante se utiliza un React.effect
     const [item,setItem] = React.useState(initialValue); //Estado inicial del custom hook
@@ -20,7 +21,7 @@ function useLocalStorage(itemNAme,initialValue) { // Vamos a abstraer cosas
     React.useEffect(()=>{
       setTimeout(()=>{try{
         const LocalStorageItems= localStorage.getItem(itemNAme) // Esting mode
-        console.log('Getting local storage');
+        console.log('Getting local storage',LocalStorageItems);
         
 
         if (!LocalStorageItems) { //Null, vacio, ...
@@ -45,7 +46,7 @@ function useLocalStorage(itemNAme,initialValue) { // Vamos a abstraer cosas
       setItem(newItem)
     };
     
-    console.log(item);
+    console.log(item,'hiiiaia');
     return {item, saveItems,loadind,error}
 }
 

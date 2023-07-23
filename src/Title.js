@@ -1,6 +1,6 @@
 import React from 'react';
 import './TodoTitle/TodoTitle.css'
-import { TodoContext } from './TodoContex';
+import { TodoContext } from './TodoContext';
 
 function TodoTitle(
   //{totalTasks,completedTasks} //Esto ya no, ahora usamos React.useContext(TodoContext)

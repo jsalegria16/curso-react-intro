@@ -1,6 +1,6 @@
 import React from 'react';
 import './TodoList/TodoAddItem.css'
-import { TodoContext } from './TodoContex';
+import { TodoContext } from './TodoContext';
 function TodoAddItem(){
     const {setOpenmodal,addTodoFunc:addTodo} =React.useContext(TodoContext)
 
