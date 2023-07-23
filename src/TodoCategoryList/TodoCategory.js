@@ -5,10 +5,10 @@ import { TodoContext } from '../TodoContext';
 function TodoCategory(props) { // REact component
 
     const {setActualCategory} = React.useContext(TodoContext)
-
+    console.log('actualcategory: ', props.text , props.isActualCategory);
     return(
         <>
-            <li className="CategoryItem" 
+            <li className={`CategoryItem ${props.isActualCategory? 'isActualCategory':''}`} 
             onClick={(event)=>{
                 setActualCategory({'text':props.text,'UrlIcon':props.UrlIcon})
                 console.log('Ahora están en categoría',{'text':props.text,'UrlIcon':props.UrlIcon});

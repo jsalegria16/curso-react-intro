@@ -36,9 +36,10 @@ function AppUI({
     */
 }){
     const {defaultCategories,searchedTodos, completeTodoFunc,
-        deleteTodoFunc, loadind, error,
+        deleteTodoFunc, loadind, error,actualCategory
         } =React.useContext(TodoContext) // Esto no es prop Drilling
         console.log('holaa ????',defaultCategories);
+        
     return (
         <>
             <section className='Mainleft'>
@@ -59,6 +60,7 @@ function AppUI({
                         UrlIcon={category.UrlIcon} 
                         text={category.text}
                         TotalTasks={category.TotalTasks}
+                        isActualCategory = {actualCategory.text===category.text}
                         /> 
                         ))
                     } {/*Cada hijo debe tener una clave única, como? el tex :)  - También le paso la prop Texto*/}

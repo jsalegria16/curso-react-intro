@@ -55,6 +55,9 @@ function TodoProvider ({children}) { // Se usa mas este, uno Provider personaliz
     const textActualCategory = defaultCategories[0].text //La primera cate que muestro{texto}
     const linkIconACtualCategory = defaultCategories[0].UrlIcon//La primera cate que muestro{su ícono}
     const [actualCategory, setActualCategory] = React.useState({'text':textActualCategory,'UrlIcon':linkIconACtualCategory}) // Lo uso en el componente title
+    
+    //Para colocar un background de color distinto en la categoria actual seleccionada
+
 
     //Filtremos los todos de la actual categoria
     const Todos = item.User1.Categories.filter((category)=>category.text==actualCategory.text)[0].Tasks // Los actuals todos.
