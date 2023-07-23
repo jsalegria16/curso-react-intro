@@ -1,6 +1,6 @@
 import React from 'react';
-import './TodoCategoryList/TodoCategoryList.css'
-import { TodoContext } from './TodoContext';
+import './TodoCategoryList.css'
+import { TodoContext } from '../TodoContext';
 
 function TodoCategory(props) { // REact component
 
