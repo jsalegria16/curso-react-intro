@@ -16,24 +16,24 @@ function TodoProvider ({children}) { // Se usa mas este, uno Provider personaliz
         error
     } = useLocalStorage('pru',{
         User1: {
-          userNane: "J",
+          userNane: "Jhon",
           Categories: [
             {
               UrlIcon: "htt",
-              text: "Planned1",
-              Tasks: [{ text: "Aprovar la FSDWJS", completed: true }],
+              text: "Planned",
+              Tasks: [
+                { text: "Hello", completed: true }
+                ]
             },
             {
               UrlIcon: "htt",
-              text: "Planned",
-              Tasks: [{ text: "Aprovar la FSDWJS", completed: true },
-                      { text: "Aprovar 1", completed: false },
-                      { text: "Aprovar 2", completed: true }
-                    
-                    ],
-            },
-          ],
-        },
+              text: "Planned2",
+              Tasks: [
+                    { text: "jejej", completed: true }
+                ]
+            }
+          ]
+        }
       });
 
     //Categories - TRabajo futuro >> Implementar esto en el local storage. Esto es lo que trae todo lo demás (todoItems.)
@@ -61,7 +61,7 @@ function TodoProvider ({children}) { // Se usa mas este, uno Provider personaliz
 
 
     // Para las búsquedas
-    const [searchValue,setSearchValue] = React.useState(' ')
+    const [searchValue,setSearchValue] = React.useState('')
     // console.log('se esta buscanco: ',searchValue);
 
     //Estado para el modal >> Teletransportación
@@ -90,17 +90,23 @@ function TodoProvider ({children}) { // Se usa mas este, uno Provider personaliz
 
 
     function updateData(newTodos) {
-        if (item && item.User1 && item.User1.Categories) {
-            const categoriaEncontrada = item.User1.Categories.find(category => category.text === actualCategory);
+
+        const newItem = {...item}
+
+        if (newItem && newItem.User1 && newItem.User1.Categories) {
+            const categoriaEncontrada = newItem.User1.Categories.find(category => category.text === actualCategory);
     
             if (categoriaEncontrada) {
-                categoriaEncontrada.Tasks.push(newTodos);
+                categoriaEncontrada.Tasks = newTodos;
             } else {
                 console.error('No se encontró la categoría especificada:', actualCategory);
             }
         } else {
             console.error('Estructura de objeto MyLocalStorage inválida.');
         }
+
+        console.log('new item: ',newItem);
+        return newItem
     }
 
     //Marcar Todos como marcados.
@@ -109,6 +115,7 @@ function TodoProvider ({children}) { // Se usa mas este, uno Provider personaliz
         let index = newTodos.findIndex((todo)=> todo.text===texto) // busco index
         newTodos[index].completed = isCompleted //Completo el deseado
         updateData(newTodos)
+
         saveItems(item) // modifico el estado todos
     }
 
@@ -125,8 +132,8 @@ function TodoProvider ({children}) { // Se usa mas este, uno Provider personaliz
     const addTodoFunc = (texto) =>{ // Para
         const newTodos = [...Todos]; //Copio
         newTodos.unshift({text:texto,completed:false})
-        updateData(newTodos)
-        saveItems(item) // modifico el estado todos
+        const newItem = updateData(newTodos)
+        saveItems(newItem) // modifico el estado todos
     }
 
 

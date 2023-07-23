@@ -6,7 +6,7 @@ function TodoAddItem(){
 
     const [newTodoValue, setNewTodoValues] = React.useState(undefined) // este no es necesario global. Es solo la info del usuario
 
-    const onSubmit = (event) => {
+    const onSubmit = (event) => { //Este se crea cuando doy click a botón último
         event.preventDefault()// PAra cancelar el recargue de la pag cuando damos click al boton 
         console.log('Vas a agregar este valor? ',newTodoValue);
         !newTodoValue? console.log('Nada!!'): (addTodo(newTodoValue))

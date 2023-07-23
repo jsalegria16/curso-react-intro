@@ -38,7 +38,7 @@ function AppUI({
     const {defaultCategories,searchedTodos, completeTodoFunc,
         deleteTodoFunc, loadind, error,
         } =React.useContext(TodoContext) // Esto no es prop Drilling
-    console.log('holaa ????',defaultCategories);
+        console.log('holaa ????',defaultCategories);
     return (
         <>
             <section className='Mainleft'>
@@ -49,7 +49,6 @@ function AppUI({
                 />
 
                 <TodoCategoryList>
-                    {/* Podemos renderizar un array */}
                     {defaultCategories.map(category => (
                     <TodoCategory
                     key={category.text}
@@ -73,10 +72,10 @@ function AppUI({
 
                 <TodoList>
                     {/*De acurdo a los estados ladong and error de useLocalStorage */}
-                    {/* {loadind && <TodosLoading/>}
+                    {loadind && <TodosLoading/>}
                     {error && <TodosError/>}
                     {(!loadind && searchedTodos.length == 0) && <TodosEmpty/>}
-                    Podemos renderizar un array */}
+                    {/* //Podemos renderizar un array */}
                     {searchedTodos.map(todo => (
                         <TodoItem 
                         key={todo.text} 
