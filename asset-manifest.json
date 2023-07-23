@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/curso-react-intro/static/css/main.310a82fe.css",
+    "main.js": "/curso-react-intro/static/js/main.0b952975.js",
+    "index.html": "/curso-react-intro/index.html",
+    "main.310a82fe.css.map": "/curso-react-intro/static/css/main.310a82fe.css.map",
+    "main.0b952975.js.map": "/curso-react-intro/static/js/main.0b952975.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.310a82fe.css",
+    "static/js/main.0b952975.js"
+  ]
+}
