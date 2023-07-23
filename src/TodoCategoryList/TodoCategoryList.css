@@ -33,7 +33,7 @@ Otros
 
 }
 
-.TodoCategoryList li:hover{
+.CategoryItem:hover{
 
     background: #0000ff1f;
 

@@ -17,7 +17,6 @@ import { TodosLoading } from '../TodosLoading';
 import { TodosError } from '../TodosError';
 import { TodosEmpty } from '../TodosEmpty';
 import { TodoContext } from '../TodoContext';
-import { Modal } from '../Modal';
 import React from 'react';
 
 
@@ -36,12 +35,10 @@ function AppUI({
     error 
     */
 }){
-
-    const {defaultCAtegories,TotalTodos} =React.useContext(TodoContext) // Esto no es prop Drilling
-    const {searchedTodos, completeTodoFunc,
+    const {defaultCategories,searchedTodos, completeTodoFunc,
         deleteTodoFunc, loadind, error,
-        openModal,setOpenmodal} =React.useContext(TodoContext) // Esto no es prop Drilling
-
+        } =React.useContext(TodoContext) // Esto no es prop Drilling
+        console.log('holaa ????',defaultCategories);
     return (
         <>
             <section className='Mainleft'>
@@ -52,15 +49,19 @@ function AppUI({
                 />
 
                 <TodoCategoryList>
-                    {/* Podemos renderizar un array */}
-                    {defaultCAtegories.map(category => (
-                    <TodoCategory
-                    key={category.text}
-                    UrlIcon={category.UrlIcon} 
-                    text={category.text}
-                    TotalTasks={category.Tasks.length}
-                    /> 
-                    ))} {/*Cada hijo debe tener una clave única, como? el tex :)  - También le paso la prop Texto*/}
+                    {/*De acurdo a los estados lading and error de useLocalStorage */}
+                    {loadind && <TodosLoading/>}
+                    
+                    {
+                        !loadind && defaultCategories.map(category => (
+                        <TodoCategory
+                        key={category.text}
+                        UrlIcon={category.UrlIcon} 
+                        text={category.text}
+                        TotalTasks={category.TotalTasks}
+                        /> 
+                        ))
+                    } {/*Cada hijo debe tener una clave única, como? el tex :)  - También le paso la prop Texto*/}
                 </TodoCategoryList>
 
                 <TodoAddCategory/>
@@ -75,13 +76,11 @@ function AppUI({
                 /> {/* // Title and counter - Por cada comonente un archivo */} 
 
                 <TodoList>
-                    {/*De acurdo a los estados ladong and error de useLocalStorage */}
+                    {/*De acurdo a los estados lading and error de useLocalStorage */}
                     {loadind && <TodosLoading/>}
                     {error && <TodosError/>}
                     {(!loadind && searchedTodos.length == 0) && <TodosEmpty/>}
-                    {console.log(!loadind)}
-                    {console.log(searchedTodos.length == 0 )}
-                    {/* Podemos renderizar un array */}
+                    {/* //Podemos renderizar un array */}
                     {searchedTodos.map(todo => (
                         <TodoItem 
                         key={todo.text} 

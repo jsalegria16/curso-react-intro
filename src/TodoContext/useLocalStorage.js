@@ -20,7 +20,8 @@ function useLocalStorage(itemNAme,initialValue) { // Vamos a abstraer cosas
     React.useEffect(()=>{
       setTimeout(()=>{try{
         const LocalStorageItems= localStorage.getItem(itemNAme) // Esting mode
-        console.log('Getting local storage');
+        console.log('Getting local storage: ', LocalStorageItems);
+
         
 
         if (!LocalStorageItems) { //Null, vacio, ...
@@ -45,12 +46,10 @@ function useLocalStorage(itemNAme,initialValue) { // Vamos a abstraer cosas
       setItem(newItem)
     };
     
-    console.log(item);
     return {item, saveItems,loadind,error}
 }
 
 export {useLocalStorage}; 
-
 
 // const defaultTodos = [
 //   {text: 'Aprovar la FSDWJS', completed: true},
@@ -66,3 +65,33 @@ export {useLocalStorage};
 
 // localStorage.setItem('TODOS_V1',JSON.stringify(defaultTodos))
 //localStorage.deleteItem('TODOS_V1')
+
+// MyLocalStorage = {
+//         User1: {
+//           userNane: "Jhon",
+//           Categories: [
+//             {
+//               UrlIcon: "htt",
+//               text: "Planned1",
+//               Tasks: [
+//                     { text: "Task1.1", completed: true },
+//                     { text: "Task1.2", completed: true },
+//                     { text: "Task1.3", completed: true }
+//                 ]
+//             },
+//             {
+//               UrlIcon: "htt",
+//               text: "Planned2",
+//               Tasks: [
+//                     { text: "Task2.1", completed: true },
+//                     { text: "Task2.2", completed: true },
+//                     { text: "Task2.3", completed: true }
+//                 ]
+//             }
+//           ]
+//         }
+//       }
+
+
+// localStorage.setItem('pru',JSON.stringify(MyLocalStorage))
+
