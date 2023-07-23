@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDom from "react-dom";
 
-localStorage.setItem()
 
 function Modal({children}){ // Teletransporpar cualquier contenido que reciba
 
