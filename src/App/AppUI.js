@@ -1,23 +1,23 @@
 // import { TodoTitle as MyTodoTitle} from './TodoTitle';
-import { TodoList } from './TodoList';
-import { TodoAddItem } from './TodoAddItem';
-import { TodoItem } from './TodoList/TodoItem';
+import { TodoList } from '../TodoList';
+import { TodoAddItem } from '../TodoList/TodoAddItem';
+import { TodoItem } from '../TodoList/TodoItem';
 
-import { TodoTitle } from './Title';
+import { TodoTitle } from '../TodoTitle';
 
-import { TodoSearch } from './TodoSearch';
+import { TodoSearch } from '../TodoSearch';
 
-import { TodoUser } from './TodoUser';
+import { TodoUser } from '../TodoUser';
 
-import { TodoCategoryList } from './TodoCategoryList';
-import { TodoAddCategory } from './TodoCategoryList/TodoAddCategory';
-import { TodoCategory } from './TodoCategoryList/TodoCategory';
+import { TodoCategoryList } from '../TodoCategoryList';
+import { TodoAddCategory } from '../TodoCategoryList/TodoAddCategory';
+import { TodoCategory } from '../TodoCategoryList/TodoCategory';
 
-import { TodosLoading } from './TodosLoading';
-import { TodosError } from './TodosError';
-import { TodosEmpty } from './TodosEmpty';
-import { TodoContext } from './TodoContex';
-import { Modal } from './Modal';
+import { TodosLoading } from '../TodosLoading';
+import { TodosError } from '../TodosError';
+import { TodosEmpty } from '../TodosEmpty';
+import { TodoContext } from '../TodoContext';
+import { Modal } from '../Modal';
 import React from 'react';
 
 
