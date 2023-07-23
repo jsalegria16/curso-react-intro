@@ -1,4 +1,4 @@
-// PAra habilitar el ReactContext
+// PAra habilitar el ReactContextsdf
 import React from "react";
 import { useLocalStorage } from "./useLocalStorage";
 
@@ -14,10 +14,30 @@ function TodoProvider ({children}) { // Se usa mas este, uno Provider personaliz
         saveItems,
         loadind,
         error
-    } = useLocalStorage('pru',[]);
+    } = useLocalStorage('pru',{
+        User1: {
+          userNane: "J",
+          Categories: [
+            {
+              UrlIcon: "htt",
+              text: "Planned1",
+              Tasks: [{ text: "Aprovar la FSDWJS", completed: true }],
+            },
+            {
+              UrlIcon: "htt",
+              text: "Planned",
+              Tasks: [{ text: "Aprovar la FSDWJS", completed: true },
+                      { text: "Aprovar 1", completed: false },
+                      { text: "Aprovar 2", completed: true }
+                    
+                    ],
+            },
+          ],
+        },
+      });
 
     //Categories - TRabajo futuro >> Implementar esto en el local storage. Esto es lo que trae todo lo demás (todoItems.)
-    console.log('hiiii',item);
+    console.log('Al menos he retornado algo');
 
     const defaultCategories = item.User1.Categories.map((category) => ({
         UrlIcon: category.UrlIcon,
@@ -25,19 +45,23 @@ function TodoProvider ({children}) { // Se usa mas este, uno Provider personaliz
         TotalTasks: category.Tasks.length,
     }));
 
+    console.log('CAts por defecto',defaultCategories);
+
     
 
     //Estado para la categoría actual
-    const [actualCategory, setActualCategory] = React.useState('Planned')
+    const [actualCategory, setActualCategory] = React.useState("Planned")
 
     const Todos = item.User1.Categories.filter((category)=>category.text==actualCategory)[0].Tasks // Los actuals todos.
 
+    console.log('Todos filtrados de la actual cat', Todos);
+    console.log(Todos);
     
 
 
 
     // Para las búsquedas
-    const [searchValue,setSearchValue] = React.useState('')
+    const [searchValue,setSearchValue] = React.useState(' ')
     // console.log('se esta buscanco: ',searchValue);
 
     //Estado para el modal >> Teletransportación
@@ -57,6 +81,7 @@ function TodoProvider ({children}) { // Se usa mas este, uno Provider personaliz
 
     //PAra buscar Todos
     const searchedTodos = Todos.filter((todo)=>{ // This is a derivated state
+        console.log('Buscando?',todo.text);
         return todo.text.toLowerCase().includes(searchValue.toLowerCase())
         }
     )
