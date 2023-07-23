@@ -11,7 +11,7 @@ import { TodoUser } from './TodoUser';
 
 import { TodoCategoryList } from './TodoCategoryList';
 import { TodoAddCategory } from './TodoCategoryList/TodoAddCategory';
-import { TodoCategory } from './TodoCategoryList/TodoCategory';
+import { TodoCategory } from './TodoCategory';
 
 import { TodosLoading } from './TodosLoading';
 import { TodosError } from './TodosError';
@@ -49,14 +49,19 @@ function AppUI({
                 />
 
                 <TodoCategoryList>
-                    {defaultCategories.map(category => (
-                    <TodoCategory
-                    key={category.text}
-                    UrlIcon={category.UrlIcon} 
-                    text={category.text}
-                    TotalTasks={category.TotalTasks}
-                    /> 
-                    ))} {/*Cada hijo debe tener una clave única, como? el tex :)  - También le paso la prop Texto*/}
+                    {/*De acurdo a los estados lading and error de useLocalStorage */}
+                    {loadind && <TodosLoading/>}
+                    
+                    {
+                        !loadind && defaultCategories.map(category => (
+                        <TodoCategory
+                        key={category.text}
+                        UrlIcon={category.UrlIcon} 
+                        text={category.text}
+                        TotalTasks={category.TotalTasks}
+                        /> 
+                        ))
+                    } {/*Cada hijo debe tener una clave única, como? el tex :)  - También le paso la prop Texto*/}
                 </TodoCategoryList>
 
                 <TodoAddCategory/>
@@ -71,7 +76,7 @@ function AppUI({
                 /> {/* // Title and counter - Por cada comonente un archivo */} 
 
                 <TodoList>
-                    {/*De acurdo a los estados ladong and error de useLocalStorage */}
+                    {/*De acurdo a los estados lading and error de useLocalStorage */}
                     {loadind && <TodosLoading/>}
                     {error && <TodosError/>}
                     {(!loadind && searchedTodos.length == 0) && <TodosEmpty/>}

@@ -6,7 +6,7 @@
 }
 
 .AddCategory:hover{
-    font-weight: bolder;
-    background-color: #ede1e3;
+    /* font-weight: bolder; */
+    background: #0000ff1f;
     cursor: pointer;
 }

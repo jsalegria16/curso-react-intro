@@ -6,7 +6,7 @@ function TodoTitle(
   //{totalTasks,completedTasks} //Esto ya no, ahora usamos React.useContext(TodoContext)
   ) { // REact component
 
-    const {TotalTodos:totalTasks,completedTodos:completedTasks} = React.useContext(TodoContext) //Elegimos las propiedades que queremos usar.
+    const {TotalTodos:totalTasks,completedTodos:completedTasks,actualCategory} = React.useContext(TodoContext) //Elegimos las propiedades que queremos usar.
 
 
     return (
@@ -15,11 +15,11 @@ function TodoTitle(
           <div className="NavBarLeft">
             <ul>
               <li>
-              <img src="https://cdn-icons-png.flaticon.com/128/6776/6776595.png" className="CategoricIcon" alt='Log'></img>
+              <img src={actualCategory.UrlIcon} className="CategoricIcon" alt='Log'></img>
               {/* <img src="/icons/menu.png" alt="MenuIcon" class="MenuIcon">  */}
               </li>
               <li>
-                  Planned 
+                {actualCategory.text }
               </li>
             </ul>
           </div>

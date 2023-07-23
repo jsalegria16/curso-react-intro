@@ -3,8 +3,7 @@ function TodoCategoryList(props){
 
     return(
         <div className='ContainerCategoryList'>
-            <ul className="TodoCategoryList"
-            >
+            <ul className="TodoCategoryList">
                 {props.children}
             </ul>
         </div>

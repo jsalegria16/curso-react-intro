@@ -8,7 +8,7 @@ function TodoAddCategory(){
             </li>
             
             <li>
-                Add new category
+                add (comming soon...)
             </li>
         </ul>
     );

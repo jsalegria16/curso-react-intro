@@ -16,22 +16,24 @@ function TodoProvider ({children}) { // Se usa mas este, uno Provider personaliz
         error
     } = useLocalStorage('pru',{
         User1: {
-          userNane: "Jhon",
+          userNane: "Super User :) ",
+          userNaneIcon:'https://cdn-icons-png.flaticon.com/128/949/949647.png',
           Categories: [
             {
-              UrlIcon: "htt",
+              UrlIcon: "https://cdn-icons-png.flaticon.com/128/6776/6776595.png",
               text: "Planned",
-              Tasks: [
-                // { text: "", completed: true }
-                ]
+              Tasks: []
             },
-            // {
-            //   UrlIcon: "htt",
-            //   text: "Planned2",
-            //   Tasks: [
-            //         // { text: "jejej", completed: true }
-            //     ]
-            // }
+            {
+              UrlIcon: "https://cdn-icons-png.flaticon.com/128/8195/8195862.png",
+              text: "My Day",
+              Tasks: []
+            },
+            {
+              UrlIcon: "https://cdn-icons-png.flaticon.com/128/3916/3916069.png",
+              text: "Important",
+              Tasks: []
+            }
           ]
         }
       });
@@ -47,12 +49,15 @@ function TodoProvider ({children}) { // Se usa mas este, uno Provider personaliz
 
     console.log('CAts por defecto',defaultCategories);
 
-    
+    const userNane = item.User1.userNane
 
     //Estado para la categoría actual
-    const [actualCategory, setActualCategory] = React.useState("Planned")
+    const textActualCategory = defaultCategories[0].text //La primera cate que muestro{texto}
+    const linkIconACtualCategory = defaultCategories[0].UrlIcon//La primera cate que muestro{su ícono}
+    const [actualCategory, setActualCategory] = React.useState({'text':textActualCategory,'UrlIcon':linkIconACtualCategory}) // Lo uso en el componente title
 
-    const Todos = item.User1.Categories.filter((category)=>category.text==actualCategory)[0].Tasks // Los actuals todos.
+    //Filtremos los todos de la actual categoria
+    const Todos = item.User1.Categories.filter((category)=>category.text==actualCategory.text)[0].Tasks // Los actuals todos.
 
     console.log('Todos filtrados de la actual cat', Todos);
     console.log(Todos);
@@ -87,19 +92,17 @@ function TodoProvider ({children}) { // Se usa mas este, uno Provider personaliz
     )
 
     //Agregar Todo a la respectiva category
-
-
     function updateData(newTodos) {
 
         const newItem = {...item}
 
         if (newItem && newItem.User1 && newItem.User1.Categories) {
-            const categoriaEncontrada = newItem.User1.Categories.find(category => category.text === actualCategory);
+            const categoriaEncontrada = newItem.User1.Categories.find(category => category.text === actualCategory.text);
     
             if (categoriaEncontrada) {
                 categoriaEncontrada.Tasks = newTodos;
             } else {
-                console.error('No se encontró la categoría especificada:', actualCategory);
+                console.error('No se encontró la categoría especificada:', actualCategory.text);
             }
         } else {
             console.error('Estructura de objeto MyLocalStorage inválida.');
@@ -115,7 +118,7 @@ function TodoProvider ({children}) { // Se usa mas este, uno Provider personaliz
         let index = newTodos.findIndex((todo)=> todo.text===texto) // busco index
         newTodos[index].completed = isCompleted //Completo el deseado
         const newItem = updateData(newTodos)
-        saveItems(newItem) // modifico el estado todos
+        saveItems(newItem) // modifico el estado Item
     }
 
     //Eliminar Todos.
@@ -124,7 +127,7 @@ function TodoProvider ({children}) { // Se usa mas este, uno Provider personaliz
         let index = newTodos.findIndex((todo)=> todo.text===texto) // busco index
         newTodos.splice(index,1);//(Pisicion inicial, numero de elementos de ahí en adelante)
         const newItem = updateData(newTodos)
-        saveItems(newItem) // modifico el estado todos
+        saveItems(newItem) // modifico el estado Item
     }
 
     // Agregar nuevos todos
@@ -132,7 +135,7 @@ function TodoProvider ({children}) { // Se usa mas este, uno Provider personaliz
         const newTodos = [...Todos]; //Copio
         newTodos.unshift({text:texto,completed:false})
         const newItem = updateData(newTodos)
-        saveItems(newItem) // modifico el estado todos
+        saveItems(newItem) // modifico el estado Item
     }
 
 
@@ -155,7 +158,8 @@ function TodoProvider ({children}) { // Se usa mas este, uno Provider personaliz
             setOpenmodal,
             addTodoFunc,
             actualCategory, 
-            setActualCategory
+            setActualCategory,
+            userNane
         }}>
             {children}
         </TodoContext.Provider>
