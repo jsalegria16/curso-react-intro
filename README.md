@@ -16,6 +16,22 @@ The Interface is created based on **[Microsoft To do](https://todo.microsoft.com
 - Git 
 - GitHub
 
+## Contribute to the project
+If you want to contribute, you can follow the next steps:
+- Clone/fork this repository(ssh/http): `git clone git@github.com:jsalegria16/curso-react-intro.git ` / `git clone https://github.com/jsalegria16/curso-react-intro.git `
+
+- Go to the project directory and install all the modules and dependencies
+    ```bash
+    cd project directory
+    npm i
+    ```
+- Make all the changes you consider. To see the changes Runs the app in the development mode
+    ```bash
+    npm start
+    ```
+    Open http://localhost:3000 to view it in your browser. The page will reload when you make changes.
+
+
 ## Aditional Documentation (Getting Started with Create React App)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
