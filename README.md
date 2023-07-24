@@ -1,15 +1,25 @@
-# Todo : Add new category
-# Repositorio base del Curso de Introducción a React.js en Platzi
+# Todo machine
 
-¡Hola, Platzinauta!
+Este proyecto hace uso de los conocimientos técnicos de **React.js** para la construcción de un Sitio web que implementa una Todo Machine. [Puedes verlo en este sitio: https://jsalegria16.github.io/curso-react-intro/](https://jsalegria16.github.io/curso-react-intro/) 
+![Alt text](image.png)
 
-En este repositorio encontrarás el código de todas las clases del [Curso de Introducción a React.js](https://platzi.com/reactjs). Para empezar solo debes clonar este repositorio (`git clone`), instalar sus dependencias (`npm i`) y ejecutar la aplicación (`npm start`).
+This project makes use of the know-how of **React.js** to build a Website that implements a Todo Machine. [You can see it on this site: https://jsalegria16.github.io/curso-react-intro/](https://jsalegria16.github.io/curso-react-intro/) 
+![Alt text](image.png)
 
-La rama principal contiene el código con el que eempezamos el curso. En las demás ramas encontrarás el código de las siguientes clases y finalmente el deploy de la aplicación.
+The Interface is created based on **[Microsoft To do](https://todo.microsoft.com/)** desktop version.
+## Technical details 
+- Basic Html 
+- Css
+- React Events
+- React States
+- Local Storage
+- React Custom Hooks
+- React Effects
+- React Context
+- Git 
+- GitHub
 
-¡Mucha suerte aprendiendo React! #NuncaParesDeAprender
-
-## Getting Started with Create React App
+## Aditional Documentation (Getting Started with Create React App)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

@@ -8,5 +8,5 @@ import {App} from './App';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root')); 
-root.render(<App />); // Lo que sea que esté dentro del archivo app lo vamos a renderizar
+root.render(<App />); // Lo que sea que esté dentro del archivo app lo vamos a renderizar(Maq de render)
 //dentro de root, el cual es el div con Id root(Archivo public/index.html)
