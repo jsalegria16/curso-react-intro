@@ -30,9 +30,13 @@ If you want to contribute, you can follow the next steps:
     npm start
     ```
     Open http://localhost:3000 to view it in your browser. The page will reload when you make changes.
+## Futures works
+- Add a new category
+- Change category icon
+- Use databases
+- Loging, and username.
 
-
-## Aditional Documentation (Getting Started with Create React App)
+# Aditional Documentation (Getting Started with Create React App)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
