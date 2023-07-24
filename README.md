@@ -1,8 +1,5 @@
 # Todo machine
 
-Este proyecto hace uso de los conocimientos técnicos de **React.js** para la construcción de un Sitio web que implementa una Todo Machine. [Puedes verlo en este sitio: https://jsalegria16.github.io/curso-react-intro/](https://jsalegria16.github.io/curso-react-intro/) 
-![Alt text](image.png)
-
 This project makes use of the know-how of **React.js** to build a Website that implements a Todo Machine. [You can see it on this site: https://jsalegria16.github.io/curso-react-intro/](https://jsalegria16.github.io/curso-react-intro/) 
 ![Alt text](image.png)
 
